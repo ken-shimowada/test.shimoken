@@ -1,0 +1,1 @@
+[2020-10-24 08:59:24] layer "LAMINA.svg": Fonts may render inconsistently and text wrapping is unsupported which can result in clipped text. Convert text to a shape to maintain fidelity.

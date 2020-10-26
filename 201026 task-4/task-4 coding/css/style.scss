@@ -185,7 +185,7 @@ header{
 
 /* ****** burger-btn ****** */
 
-.header__inner.burger-btn{
+.burger-btn{
     display: none;
 
     @include tab{ /* < 768px */
@@ -253,9 +253,14 @@ header{
 
 /* ****** slider ****** */
 
+.slick-track{
+    width: 100%;
+}
+
 .slider{
     
 }
+
 .slider .mv__slide{
     // height: 710px;
     background: #f1dfc8;
@@ -263,30 +268,78 @@ header{
 
 .mv__slide__inner{
     height: 710px;
-    background: url(../img/mv-img.png) no-repeat right top -20%;
+    background: url(../img/mv-img.png) no-repeat right bottom 130%;
+
+    @include pc{ /* < 1024px */
+        height: 650px;
+        // background: url(../img/mv-img.png) no-repeat right bottom 130% / 42%;
+    }
+
+    @include tab{ /* < 768px */
+        height: 590px;
+        // background: url(../img/mv-img.png) no-repeat right bottom 130% / 60%;
+    }
+
+    @include sp{ /* < 480px */
+        height: 500px;
+        background: url(../img/mv-img.png) no-repeat right bottom 160% / 80%;
+
+    }
 }
 
 .mv__slide__title{
-    padding: 170px 0 0 90px;
+    padding: 170px 0 0 7.5%;
     transform: rotate(-5deg);
     font-family: myriad-pro,sans-serif;
     font-size: 18.6rem;
     letter-spacing: .025em;
     color: #fff;
+
+    @include pc{ /* < 1024px */
+        padding: 170px 0 0 4%;
+        font-size: 15rem;
+    }
+
+    @include tab{ /* < 768px */
+        padding: 140px 0 0 0;
+        font-size: 11rem;
+    }
+
+    @include sp{ /* < 480px */
+
+        font-size: 8rem;
+    }
 }
 
 .mv__slide__text{
-    margin: -30px 0 0 310px;
+    margin: -30px 0 0 20%;
     font-size: 2.6rem;
     letter-spacing: .2em;
       
+    // @include pc{ /* < 1024px */
+    // }
+
+    @include tab{ /* < 768px */
+        margin: -20px 0 0 15%;
+    }
+
+    // @include sp{ /* < 480px */
+    // }
 }
 
 .mv__slide__inner .btn{
-    margin: 36px 0 0 300px;
+    margin: 36px 0 0 20%;
     padding-bottom: 3px;
     font-size: 18px;
     letter-spacing: .1em;
+
+    @include pc{ /* < 1024px */
+        margin: 26px 0 0 20%;
+    }
+
+    @include tab{ /* < 768px */
+        margin: 26px 0 0 15%;
+    }
 }
 
 
@@ -300,11 +353,11 @@ header{
 
 .slider .slick-prev{
     z-index: 3;
-    left: 30px;
+    left: 20px;
 }
 
 .slider .slick-next{
-    right: 30px;
+    right: 20px;
 }
 
 .slider .slick-prev:before {

@@ -249,6 +249,38 @@ header{
 /* ****** header__inner__sp ****** */
 
 .header__inner__sp{
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    // color: #fff5fe;
+    background-color:#f0f2f4;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .4s ease, visibility .4s ease;
+    z-index: 5;
+}
+
+.header__inner__sp.open{
+    // メニュー全表示動作
+    visibility: visible;
+    z-index: 2;
+    opacity: 1;
+}
+
+.sp-nav__list{
+    margin-left: 20%;
+}
+
+.sp-nav__item{
+    margin-top: 30px;
+    font-size: 2rem;
+}
+
+.sp-nav__item > a{
 
 }
 
@@ -360,7 +392,7 @@ header{
 }
 
 .slider .slick-prev{
-    z-index: 3;
+    z-index: 1;
     left: 20px;
 }
 
@@ -432,21 +464,18 @@ header{
 
 /* ****** collection__img ****** */
 
-.collection__img{
+.collection__imgs{
+    position: relative;
     width: 58%;
-    max-width: 700px;
-    height: 310px;
 
     @include pc{ /* < 1024px */
-        max-width: 870px;
         width: 100%;
     }
+}
 
-    // @include tab{ /* < 768px */
-    // }
-
-    // @include sp{ /* < 480px */
-    // }
+.collection__img{
+    height: 310px;
+    margin-left: 30px;
 }
 
 .collection__img > img{
@@ -455,21 +484,54 @@ header{
     object-fit: cover;
 }
 
+.collection__img__bg{
+    position: absolute;
+    top: 48px;
+    width: 95%;
+    height: 290px;
+    z-index: -1;
+}
+
+.collection__img__bg > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+
 /* ****** collection__box ****** */
 
 .collection__box{
-    padding: 0 6% 0 7%;
+    padding: 60px 6% 0 7%;
+
+    // @include tab{ /* < 768px */
+    //     padding-top: 50px;
+    // }
+
+    // @include sp{ /* < 480px */
+    //     padding-top: 40px;
+    // }
 }
 
 .collection__title{
-    margin-top: 60px;
+    // margin-top: 60px;
 }
 
 .h2__sub{
-
     font-family: futura-pt,sans-serif;
     font-size: 2rem;
     letter-spacing: 0.2em;
+
+    @include tab{ /* < 768px */
+        font-size: 1.8rem;
+    }
+
+    @include sp{ /* < 480px */
+        font-size: 1.6rem;
+    }
 }
 
 .h2__main{
@@ -477,15 +539,39 @@ header{
     font-family: linotype-didot,serif;
     font-size: 6.4rem;
     letter-spacing: 0.1em;
+
+    @include tab{ /* < 768px */
+        font-size: 5rem;
+    }
+
+    @include sp{ /* < 480px */
+        font-size: 4rem;
+    }
 }
 
 .collection__text{
     font-size: 1.8rem;
+
+    @include tab{ /* < 768px */
+        font-size: 1.6rem;
+    }
+
+    // @include sp{ /* < 480px */
+    //     font-size: 1.6rem;
+    // }
 }
 
 .collection__box .btn{
     margin-top: 35px;
     font-size: 1.5rem;
+
+    @include tab{ /* < 768px */
+        margin-top: 28px;
+    }
+
+    @include sp{ /* < 480px */
+        margin-top: 22px;
+    }
 }
 
 

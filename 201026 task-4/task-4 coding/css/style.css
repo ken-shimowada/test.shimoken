@@ -122,7 +122,6 @@ header {
 /* ****** burger-btn ****** */
 .burger-btn {
   display: none;
-  position: absolute;
 }
 @media (max-width: 768px) {
   .burger-btn {
@@ -276,7 +275,7 @@ header {
 @media (max-width: 480px) {
   .mv__slide__title {
     /* < 480px */
-    font-size: 8rem;
+    font-size: 7rem;
   }
 }
 
@@ -408,7 +407,7 @@ header {
 .collection__img__bg {
   position: absolute;
   top: 48px;
-  width: 95%;
+  right: 30px;
   height: 290px;
   z-index: -1;
 }

@@ -189,7 +189,6 @@ header{
 
 .burger-btn{
     display: none;
-    position: absolute;
 
     @include tab{ /* < 768px */
         display: block;
@@ -347,7 +346,7 @@ header{
 
     @include sp{ /* < 480px */
 
-        font-size: 8rem;
+        font-size: 7rem;
     }
 }
 
@@ -487,7 +486,7 @@ header{
 .collection__img__bg{
     position: absolute;
     top: 48px;
-    width: 95%;
+    right: 30px;
     height: 290px;
     z-index: -1;
 }

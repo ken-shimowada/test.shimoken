@@ -44,9 +44,11 @@ body {
 header
 ==================================================*/
 header {
+  position: relative;
   font-size: 1.5rem;
   font-family: bodoni-urw, serif;
   letter-spacing: 0.2em;
+  height: 118px;
 }
 
 .header__inner {
@@ -120,11 +122,16 @@ header {
 /* ****** burger-btn ****** */
 .burger-btn {
   display: none;
+  position: absolute;
 }
 @media (max-width: 768px) {
   .burger-btn {
     /* < 768px */
     display: block;
+    position: absolute;
+    top: -50%;
+    left: 88%;
+    transform: translateY(-50%);
     width: 39px;
     height: 39px;
     position: relative;

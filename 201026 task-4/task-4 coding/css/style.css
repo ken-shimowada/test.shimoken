@@ -34,14 +34,33 @@ body {
 }
 
 .btn {
+  position: relative;
   display: inline-block;
   font-family: futura-pt, sans-serif;
   border-bottom: 1px solid #333;
 }
 
-.btn:hover {
-  color: #838383;
-  border-bottom: 1px solid #838383;
+.btn > a::after {
+  background: #333333;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transform-origin: right;
+  transition: transform 0.5s ease;
+  height: 1px;
+  width: 100%;
+}
+
+.btn > a::after:hover {
+  background: #333333;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transform: scaleX(0, 0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+  height: 1px;
+  width: 100%;
 }
 
 /*==================================================

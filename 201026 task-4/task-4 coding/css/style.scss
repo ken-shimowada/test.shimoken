@@ -92,6 +92,11 @@ $sp: 480px;
     border-bottom: 1px solid #333;
 }
 
+.btn:hover{
+    color: rgb(131, 131, 131);
+    border-bottom: 1px solid rgb(131, 131, 131);
+}
+
 
 /*==================================================
 
@@ -279,9 +284,36 @@ header{
     font-size: 2rem;
 }
 
-.sp-nav__item > a{
 
+
+/* ****** hover animation ****** */
+
+.header__nav__item > a,
+.sp-nav__item > a{
+    position: relative;
+    display: inline-block;
 }
+
+.header__nav__item > a::after,
+.sp-nav__item > a::after{
+    content: '';
+	background: #333333;
+	position: absolute;
+	bottom: -4px;
+	left: 0;
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform .5s ease;
+	height: 1px;
+	width: 100%;
+}
+
+.header__nav__item> a:hover::after,
+.sp-nav__item > a:hover::after{
+    transform: scaleX(1);
+	transform-origin: left;
+}
+
 
 
 
@@ -355,18 +387,21 @@ header{
     font-size: 2.6rem;
     letter-spacing: .2em;
       
-    // @include pc{ /* < 1024px */
-    // }
-
-    @include tab{ /* < 768px */
-        margin: -20px 0 0 15%;
+    @include pc{ /* < 1024px */
+        font-size: 2.2rem;
+        margin: -20px 0 0 20%;
     }
 
-    // @include sp{ /* < 480px */
-    // }
+    @include tab{ /* < 768px */
+        margin: -15px 0 0 15%;
+    }
+
+    @include sp{ /* < 480px */
+
+    }
 }
 
-.mv__slide__inner .btn{
+.mv__slide__inner > .btn{
     margin: 36px 0 0 20%;
     padding-bottom: 3px;
     font-size: 18px;
@@ -374,6 +409,7 @@ header{
 
     @include pc{ /* < 1024px */
         margin: 26px 0 0 20%;
+        font-size: 16px;
     }
 
     @include tab{ /* < 768px */
@@ -381,6 +417,19 @@ header{
     }
 }
 
+// .mv__slide__inner > .btn > a::after{
+//     content: '';
+//     background: #333333;
+//     display: inline-block;
+// 	position: absolute;
+// 	bottom: -4px;
+// 	left: 0;
+// 	// transform: scaleX(0);
+// 	// transform-origin: right;
+// 	// transition: transform .5s ease;
+// 	height: 1px;
+// 	width: 100%;
+// }
 
 /* ****** slider-plugin  ****** */
 
@@ -451,11 +500,12 @@ header{
     justify-content: space-between;
 
     @include pc{ /* < 1024px */
-        display: block;
+        // display: block;
     }
 
-    // @include tab{ /* < 768px */
-    // }
+    @include tab{ /* < 768px */
+        display: block;
+    }
 
     // @include sp{ /* < 480px */
     // }
@@ -467,7 +517,10 @@ header{
     position: relative;
     width: 58%;
 
-    @include pc{ /* < 1024px */
+    // @include pc{ /* < 1024px */
+    //     width: 100%;
+    // }
+    @include tab{ /* < 768px */
         width: 100%;
     }
 }
@@ -475,6 +528,18 @@ header{
 .collection__img{
     height: 310px;
     margin-left: 30px;
+
+    @include pc{ /* < 1024px */
+        height: 250px;
+    }
+
+    // @include tab{ /* < 768px */
+        
+    // }
+
+    @include sp{ /* < 480px */
+        height: 200px;
+    }
 }
 
 .collection__img > img{
@@ -489,6 +554,18 @@ header{
     right: 30px;
     height: 290px;
     z-index: -1;
+
+    @include pc{ /* < 1024px */
+        height: 230px;
+    }
+
+    // @include tab{ /* < 768px */
+        
+    // }
+
+    @include sp{ /* < 480px */
+        height: 180px;
+    }
 }
 
 .collection__img__bg > img{
@@ -504,15 +581,13 @@ header{
 /* ****** collection__box ****** */
 
 .collection__box{
-    padding: 60px 6% 0 7%;
+    display: flex;
+    align-items: center;
+    padding: 0 6% 0 7%;
 
-    // @include tab{ /* < 768px */
-    //     padding-top: 50px;
-    // }
-
-    // @include sp{ /* < 480px */
-    //     padding-top: 40px;
-    // }
+    @include tab{ /* < 768px */
+        margin-top: 70px;
+    }
 }
 
 .collection__title{
@@ -524,10 +599,9 @@ header{
     font-size: 2rem;
     letter-spacing: 0.2em;
 
-    @include tab{ /* < 768px */
+    @include pc{ /* < 1024px */
         font-size: 1.8rem;
     }
-
     @include sp{ /* < 480px */
         font-size: 1.6rem;
     }
@@ -539,10 +613,12 @@ header{
     font-size: 6.4rem;
     letter-spacing: 0.1em;
 
-    @include tab{ /* < 768px */
+    @include pc{ /* < 1024px */
         font-size: 5rem;
     }
-
+    // @include tab{ /* < 768px */
+    //     font-size: 5rem;
+    // }
     @include sp{ /* < 480px */
         font-size: 4rem;
     }
@@ -551,9 +627,12 @@ header{
 .collection__text{
     font-size: 1.8rem;
 
-    @include tab{ /* < 768px */
+    @include pc{ /* < 1024px */
         font-size: 1.6rem;
     }
+    // @include tab{ /* < 768px */
+    //     font-size: 1.6rem;
+    // }
 
     // @include sp{ /* < 480px */
     //     font-size: 1.6rem;
